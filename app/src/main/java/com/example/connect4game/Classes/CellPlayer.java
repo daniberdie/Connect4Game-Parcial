@@ -21,12 +21,4 @@ public class CellPlayer {
     public boolean isEqualTo(CellPlayer other) {
         return other != null && this.id == other.id;
     }
-
-    public boolean isPlayer1() {
-        return this.id == '1';
-    }
-
-    public boolean isPlayer2() {
-        return this.id == '2';
-    }
 }
