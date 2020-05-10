@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#800066FF">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/config_activity_title"
+            android:textSize="25dp"
+            android:textStyle="bold">
+        </TextView>
+    </androidx.appcompat.widget.Toolbar>
+
+    <Space
+        android:id="@+id/spacer1"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"></Space>
+
+    <TextView
+        android:id="@+id/alias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spacer1"
+        android:textColorHint="@android:color/black"
+        android:text="@string/alias"
+        android:textColor="@android:color/black"
+        android:textSize="25dp"
+        android:paddingLeft="10dp"/>
+
+    <Space
+        android:id="@+id/spacer2"
+        android:layout_below="@id/alias"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"></Space>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:layout_below="@+id/spacer2">
+
+        <ImageView
+            android:id="@+id/alias_image"
+            android:layout_alignStart="@+id/alias"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:paddingHorizontal="10dp"
+            android:src="@drawable/alias"
+            android:layout_alignLeft="@+id/alias" />
+
+        <EditText
+            android:id="@+id/alias_editText"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/alias"/>
+    </LinearLayout>
+
+    <Space
+        android:id="@+id/spacer3"
+        android:layout_below="@id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"></Space>
+
+    <TextView
+        android:id="@+id/size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/size"
+        android:textColor="@android:color/black"
+        android:textSize="25dp"
+        android:paddingLeft="10dp"
+        android:layout_below="@id/spacer3"/>
+
+    <Space
+        android:id="@+id/spacer4"
+        android:layout_below="@id/size"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"></Space>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/spacer4"
+        android:paddingLeft="10dp"
+        android:layout_alignStart="@id/size"
+        android:layout_alignLeft="@id/size">
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@android:color/black"
+            android:checked="true"
+            android:textSize="20dp"
+            android:text="@string/five"/>
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@android:color/black"
+            android:textSize="20dp"
+            android:text="@string/six"/>
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@android:color/black"
+            android:textSize="20dp"
+            android:text="@string/seven"/>
+    </RadioGroup>
+
+    <Space
+        android:id="@+id/spacer5"
+        android:layout_below="@id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"></Space>
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spacer5"
+        android:text="@string/time_control"
+        android:textColor="@android:color/black"
+        android:textSize="25dp"
+        android:paddingLeft="10dp"/>
+
+    <Space
+        android:id="@+id/spacer6"
+        android:layout_below="@id/time"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"></Space>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_below="@id/spacer6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignStart="@+id/time"
+            android:layout_alignLeft="@+id/time"
+            android:paddingHorizontal="10dp"
+            android:src="@drawable/timer" />
+
+        <CheckBox
+            android:id="@+id/checkTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:buttonTint="@android:color/black"/>
+
+    </LinearLayout>
+
+    <Space
+        android:id="@+id/spacer7"
+        android:layout_below="@id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"></Space>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spacer7"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/btn_start"
+            android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/btnTwoPlayers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/two_players"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/btn_back"
+            android:textSize="20dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

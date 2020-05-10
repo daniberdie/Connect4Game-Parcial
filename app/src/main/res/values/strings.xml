@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Connect 4</string>
+
+    //activity_main
+    <string name="config">Configuració</string>
+    <string name="btn_help">Ajuda</string>
+    <string name="btn_init">Iniciar partida</string>
+    <string name="btn_exit">Sortir</string>
+
+    //activity_help
+    <string name="help_activity_title">Ajuda</string>
+    <string name="description">Connect 4 és un joc de taula que consisteix en anar introduint fitxes en un tauler vertical amb l\'objectiu d\'alinear 4 consecutives del color assignat al jugador(VERMELL) abans que l\'oponent (GROC).
+        \n \n A cada torn, el jugador introdueix una fitxa a la columna triada(sempre i quan no estigui plena), i aquesta cau a la fila més baixa possible.
+        \n \n Guanya la partida el jugador que primer aconsegueix alinear 4 fitxes consecutives del seu color en horitzontal, vertical o diagonal.
+        \n \n Si totes les columnes estan plenes i ningu ha aconseguit alinear-ne 4 fitxes o s\'agota el temps (en cas de elegir control de temps), hi ha empat.</string>
+    <string name="btn_back">Tornar</string>
+
+    //activity_config
+    <string name="config_activity_title">Configuració</string>
+    <string name="btn_start">Començar</string>
+    <string name="two_players">Dos jugadors</string>
+    <string name="alias">Alias: </string>
+    <string name="size">Mida del tauler: </string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="time_control">Control de temps: </string>
+    <string name="toast_message">Si us plau, especifiqui un alias</string>
+
+    //activity_game
+    <string name="turn">Torn: </string>
+    <string name="time_game">Temps: </string>
+    <string name="cells">Caselles restants: </string>
+    <string name="victory_result">Victoria</string>
+    <string name="defeat_result">Derrota</string>
+    <string name="draw_result">Empat</string>
+    <string name="seconds">seg.</string>
+
+    
+    //activity_result
+    <string name="ResultsTitle">Resultats</string>
+    <string name="date">Data i Hora</string>
+    <string name="resume">Valors del Log</string>
+    <string name="email">E-Mail a enviar resultats</string>
+    <string name="email_error">Si us plau, especifiqui un correu electrònic</string>
+    <string name="cellsToFinish">Caselles per acabar: </string>
+    <string name="sendResult">Enviar resultat</string>
+    <string name="timeDisabled">Control temps: NO</string>
+    <string name="timeActived">Control temps: SÍ</string>
+
+    //Toast
+    <string name="invalid_cell">Casella incorrecta</string>
+    <string name="win">Heu guanyat!!</string>
+    <string name="player2_win">Ha guanyat Player2!!</string>
+    <string name="lose">Heu perdut.</string>
+    <string name="draw_cells">Heu empatat, Tauler ple.</string>
+    <string name="draw_time">Heu empatat, Temps superat.</string>
+    <string name="draw">Heu empatat.</string>
+
+</resources>
