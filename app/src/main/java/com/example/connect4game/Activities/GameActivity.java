@@ -108,25 +108,13 @@ public class GameActivity extends AppCompatActivity {
                 int col = position % grid_size;
                 //Comprobar que la columna no està plena i que s'ha clickat en una de les possibles caselles
                 if (game.canPlayColumn(col) && availablePositions.contains(position)){
+                    //Millora: Encapsular codi
                     if(game.getStatus() == Status.PLAYER1_PLAYS){
-                        Position movedPosition = game.drop(col);
-                        int row = movedPosition.getRow();
-                        //Obtindre la posicio on s'ha insertat la fitxa
-                        int posi = row * grid_size + col;
-                        graella[posi] = R.drawable.user_cell;
-
+                        setTheDrawableGrid(col,R.drawable.user_cell);
                     } else {
-                        Position movedPosition = game.drop(col);
-                        int row = movedPosition.getRow();
-                        int posi = row * grid_size + col;
-                        graella[posi] = R.drawable.oponent_cell;
+                        setTheDrawableGrid(col,R.drawable.oponent_cell);
                     }
-                    board.setAdapter(imageAdapter);
-                    cells_left--;
-                    setCellsLeft();
-                    checkFinish();
-                    setTurnText();
-
+                    updateTheGame();
 
                     if(cpu_mode) {
                         if (game.isFinished()) return;
@@ -135,15 +123,9 @@ public class GameActivity extends AppCompatActivity {
                             int posCPU = r.nextInt(grid_size - 0);
                             int colCPU = posCPU % grid_size;
                             if (game.canPlayColumn(colCPU)) {
-                                Position movedPosition = game.drop(colCPU);
-                                int rowCPU = movedPosition.getRow();
-                                int posiCPU = rowCPU * grid_size + colCPU;
-                                graella[posiCPU] = R.drawable.oponent_cell;
-                                board.setAdapter(imageAdapter);
-                                cells_left--;
-                                setCellsLeft();
-                                checkFinish();
-                                setTurnText();
+                                //Millora: Encapsular codi
+                                setTheDrawableGrid(colCPU,R.drawable.oponent_cell);
+                                updateTheGame();
                                 break;
                             }
                         }
@@ -156,6 +138,26 @@ public class GameActivity extends AppCompatActivity {
                 updateTime();
             }
         });
+
+        //Millora: ús de notifyDataSetChange
+        imageAdapter.notifyDataSetChanged();
+    }
+
+    //Millora: Encapsular codi
+    public void updateTheGame(){
+        board.setAdapter(imageAdapter);
+        cells_left--;
+        setCellsLeft();
+        checkFinish();
+        setTurnText();
+    }
+
+    //Millora: Encapsular codi
+    public void setTheDrawableGrid(int col, int drawable_id){
+        Position movedPosition = game.drop(col);
+        int row= movedPosition.getRow();
+        int position = row * grid_size + col;
+        graella[position] = drawable_id;
     }
 
     public void updateTime() {
