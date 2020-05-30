@@ -1,5 +1,8 @@
 package com.example.connect4game.Classes;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 public class Game {
     private final Board board;
     private final int toWin;
@@ -13,6 +16,13 @@ public class Game {
         this.board = new Board(size);
         this.status = Status.PLAYER1_PLAYS;
         this.size = size;
+    }
+
+    protected Game(Parcel in) {
+        toWin = in.readInt();
+        size = in.readInt();
+        board = (Board) in.readSerializable();
+        status = (Status) in.readSerializable();
     }
 
     public Status getStatus() {

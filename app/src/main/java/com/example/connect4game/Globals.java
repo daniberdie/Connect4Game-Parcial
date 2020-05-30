@@ -16,5 +16,6 @@ public class Globals {
     public static String ResultLog = "ResultLog";
     public static String ResultEmail = "ResultEmail";
     public static String RESULT = "result";
+    public static String DETAIL_RESULT = "detail_result";
 
 }

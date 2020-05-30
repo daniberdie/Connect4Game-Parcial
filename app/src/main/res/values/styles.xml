@@ -5,7 +5,12 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">#000000</item>
+    </style>
+
+    <style name="PreferencesTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:background">#995B80AA</item>
+        <item name="colorAccent">#FFFFFF</item>
     </style>
 
 </resources>

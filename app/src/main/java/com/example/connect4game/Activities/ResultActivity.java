@@ -1,13 +1,18 @@
 package com.example.connect4game.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -16,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.connect4game.Classes.SQLite;
 import com.example.connect4game.Globals;
 import com.example.connect4game.R;
 
@@ -30,18 +36,25 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     private int size, finalcells;
     private long time;
     private boolean withTime;
-    private String alias, result, timeUsedOrRemaining;
+    private String alias, result, timeUsedOrRemaining, detail_result;
+
+    private Toolbar toolbar;
 
     private EditText editText_date;
     private EditText editText_log;
     private EditText editText_email;
 
     private ImageView resultLandImage;
+    private SQLite sqlite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        PreferenceManager.setDefaultValues(this,R.xml.config_preferences, false);
 
         resultLandImage = findViewById(R.id.imageResult);
 
@@ -70,6 +83,13 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
 
         //Se mostrarà imatges de Victoria, Derrota o Empat quan la pantalla està orientada horitzontalment
         setImageResult();
+
+        saveToDataBase();
+    }
+
+    private void saveToDataBase() {
+        sqlite = new SQLite(this);
+        sqlite.addResult(alias, editText_date.getText().toString(), size, withTime, time, result, detail_result);
     }
 
     private void setImageResult() {
@@ -89,6 +109,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         alias = intent.getStringExtra(Globals.ALIAS);
         finalcells = intent.getIntExtra(Globals.CELLS, 0);
         result = intent.getStringExtra(Globals.RESULT);
+        detail_result = intent.getStringExtra(Globals.DETAIL_RESULT);
     }
 
     private void recuperateInstances(Bundle savedInstanceState) {
@@ -100,6 +121,8 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         time = savedInstanceState.getLong(Globals.TIME_LEFT, 0);
         alias = savedInstanceState.getString(Globals.ALIAS);
         result = savedInstanceState.getString(Globals.RESULT);
+        detail_result = savedInstanceState.getString(Globals.DETAIL_RESULT);
+
     }
 
     private void setEditTexts() {
@@ -126,7 +149,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
                 sendEmailWithResults();
                 break;
             case R.id.btnNewGame:
-                moveToNewGameConfig();
+                startNewGame();
                 break;
             case R.id.btnExitGame:
                 finish();
@@ -154,10 +177,18 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
-    private void moveToNewGameConfig() {
-        Intent intent = new Intent(ResultActivity.this, ConfigActivity.class);
-        finish();
-        startActivity(intent);
+    private void startNewGame() {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ResultActivity.this);
+        String player = prefs.getString(getResources().getString(R.string.user_key),
+                getResources().getString(R.string.user_default));
+        if(player.equals("")){
+            Toast.makeText(ResultActivity.this, R.string.toast_message, Toast.LENGTH_LONG).show();
+        }else{
+            Intent intent = new Intent(ResultActivity.this, GameActivity.class);
+            intent.putExtra(Globals.ALIAS,player);
+            startActivity(intent);
+            finish();
+        }
     }
 
     @Override
@@ -171,5 +202,35 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         outState.putLong(Globals.TIME_LEFT, time);
         outState.putString(Globals.ALIAS, alias);
         outState.putString(Globals.RESULT, result);
+        outState.putString(Globals.DETAIL_RESULT,detail_result);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        toolbar.inflateMenu(R.menu.menu_preferences);
+
+        //Mostrar opció de menú per tornar a la pantalla de inici
+        MenuItem item_main = menu.findItem(R.id.main_option);
+        item_main.setVisible(true);
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch(item.getItemId()) {
+                    case R.id.preference_option:
+                        Intent intent_pref = new Intent(ResultActivity.this, PreferencesActivity.class);
+                        startActivity(intent_pref);
+                        return true;
+                    case R.id.main_option:
+                        Intent intent_main = new Intent(ResultActivity.this, MainActivity.class);
+                        startActivity(intent_main);
+                        finish();
+                        return true;
+                    default:
+                        return ResultActivity.super.onOptionsItemSelected(item);
+                }
+            }
+        });
+        return true;
     }
 }

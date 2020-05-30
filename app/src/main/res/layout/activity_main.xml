@@ -8,7 +8,18 @@
     tools:context=".Activities.MainActivity"
     android:background="#B33A70CC">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    </androidx.appcompat.widget.Toolbar>
+
     <LinearLayout
+        android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="2">
@@ -26,56 +37,88 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp">
 
-        <Button
-            android:id="@+id/btnHelp"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="60dp"
-            android:textStyle="bold"
-            android:text="@string/btn_help"
-            android:layout_centerHorizontal="true"
-            android:layout_above="@+id/spacer1"
-            android:background="#CC292929"
-            android:textColor="#FFF"/>
+            android:layout_centerInParent="true">
 
-        <Space
-            android:id="@+id/spacer1"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_above="@id/btnInit"></Space>
+            <Space
+                android:id="@+id/header_space"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"></Space>
 
-        <Button
-            android:id="@+id/btnInit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/btn_init"
-            android:textSize="60dp"
-            android:textStyle="bold"
-            android:textColor="#FFF"
-            android:layout_centerInParent="true"
-            android:background="#CC13BA00"/>
+            <Button
+                android:id="@+id/btnHelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="50dp"
+                android:textStyle="bold"
+                android:text="@string/btn_help"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/header_space"
+                android:background="#CC292929"
+                android:textColor="#FFF"/>
 
-        <Space
-            android:id="@+id/spacer2"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_below="@id/btnInit"></Space>
+            <Space
+                android:id="@+id/spacer1"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/btnHelp"></Space>
 
-        <Button
-            android:id="@+id/btnExit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/btn_exit"
-            android:textSize="60dp"
-            android:textStyle="bold"
-            android:textColor="#FFF"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/spacer2"
-            android:background="#CCF30000"/>
+            <Button
+                android:id="@+id/btnInit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/btn_init"
+                android:textSize="50dp"
+                android:textStyle="bold"
+                android:textColor="#FFF"
+                android:layout_below="@id/spacer1"
+                android:background="#CC13BA00"/>
+
+            <Space
+                android:id="@+id/spacer2"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/btnInit"></Space>
+            <Button
+                android:id="@+id/btnDataBase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="50dp"
+                android:textStyle="bold"
+                android:text="@string/btn_database"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/spacer2"
+                android:background="#CC001EFF"
+                android:textColor="#FFF"/>
+
+            <Space
+                android:id="@+id/spacer3"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/btnDataBase"></Space>
+
+            <Button
+                android:id="@+id/btnExit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/btn_exit"
+                android:textSize="50dp"
+                android:textStyle="bold"
+                android:textColor="#FFF"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/spacer3"
+                android:background="#CCF30000"/>
+
+        </RelativeLayout>
+
+
 
     </RelativeLayout>
 

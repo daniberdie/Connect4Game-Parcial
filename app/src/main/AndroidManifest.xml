@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.connect4game">
 
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -12,8 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.ResultActivity"></activity>
-        <activity android:name=".Activities.GameActivity"
+        <activity android:name=".Activities.DetailActivity"></activity>
+        <activity android:name=".Activities.DataBaseActivity"></activity>
+        <activity
+            android:name=".Activities.PreferencesActivity"
+            android:theme="@style/PreferencesTheme" />
+        <activity android:name=".Activities.ResultActivity" />
+        <activity
+            android:name=".Activities.GameActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity android:name=".Activities.ConfigActivity" />

@@ -1,6 +1,7 @@
 package com.example.connect4game.Classes;
 
-public class Board {
+
+public class Board{
     private final int size;
     private final CellPlayer[][] cells;
 

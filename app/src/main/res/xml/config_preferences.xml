@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/config">
+
+        <EditTextPreference
+            android:id="@+id/user_config"
+            android:key="@string/user_key"
+            android:title="@string/userTitle"
+            android:summary="@string/userSummary"
+            android:dialogTitle="@string/titleDialog"
+            android:defaultValue="@string/user_default"/>
+
+        <ListPreference
+            android:id="@+id/board_config"
+            android:key="@string/board_key"
+            android:title="@string/boardTitle"
+            android:summary="@string/boardSummary"
+            android:dialogTitle="@string/titleDialog"
+            android:entries="@array/board1"
+            android:entryValues="@array/board2"
+            android:defaultValue="7"/>
+
+        <CheckBoxPreference
+            android:id="@+id/time_config"
+            android:key="@string/time_key"
+            android:title="@string/timeTitle"
+            android:summary="@string/timeSummary"
+            android:defaultValue="true"/>
+
+        <CheckBoxPreference
+            android:id="@+id/multiplayer_config"
+            android:key="@string/multiplayer_key"
+            android:title="@string/multiplayerTitle"
+            android:summary="@string/multiplayerSummary"
+            android:defaultValue="false"/>
+
+        <ListPreference
+            android:id="@+id/select_time"
+            android:key="@string/selectTime_key"
+            android:title="@string/selectTimeTitle"
+            android:summary="@string/selectTimeSummary"
+            android:dialogTitle="@string/titleDialog"
+            android:entries="@array/selectTime1"
+            android:entryValues="@array/selectTime2"
+            android:defaultValue="60"/>
+    </PreferenceCategory>
+</PreferenceScreen>

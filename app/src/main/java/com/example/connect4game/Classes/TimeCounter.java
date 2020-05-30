@@ -3,12 +3,13 @@ package com.example.connect4game.Classes;
 import android.os.CountDownTimer;
 
 import com.example.connect4game.Activities.GameActivity;
+import com.example.connect4game.Fragments.GameFragment;
 
 public class TimeCounter extends CountDownTimer {
 
     private long timeLeft;
     private Game game;
-    private GameActivity gameActivity;
+    private GameFragment gameActivity;
     /**
      * @param millisInFuture    The number of millis in the future from the call
      *                          to {@link #start()} until the countdown is done and {@link #onFinish()}
@@ -16,7 +17,7 @@ public class TimeCounter extends CountDownTimer {
      * @param countDownInterval The interval along the way to receive
      *                          {@link #onTick(long)} callbacks.
      */
-    public TimeCounter(long millisInFuture, long countDownInterval, Game game, GameActivity gameActivity) {
+    public TimeCounter(long millisInFuture, long countDownInterval, Game game, GameFragment gameActivity) {
         super(millisInFuture, countDownInterval);
         this.game = game;
         this.gameActivity = gameActivity;

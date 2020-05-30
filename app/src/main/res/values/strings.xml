@@ -6,6 +6,7 @@
     <string name="btn_help">Ajuda</string>
     <string name="btn_init">Iniciar partida</string>
     <string name="btn_exit">Sortir</string>
+    <string name="btn_database">Base dades</string>
 
     //activity_help
     <string name="help_activity_title">Ajuda</string>
@@ -36,7 +37,7 @@
     <string name="draw_result">Empat</string>
     <string name="seconds">seg.</string>
 
-    
+
     //activity_result
     <string name="ResultsTitle">Resultats</string>
     <string name="date">Data i Hora</string>
@@ -48,6 +49,17 @@
     <string name="timeDisabled">Control temps: NO</string>
     <string name="timeActived">Control temps: SÍ</string>
 
+    //activity_database
+    <string name="DataBaseTitle">Base de dades</string>
+
+    //activity_detail
+    <string name="DetailTitle">Detalls partida</string>
+    <string name="detail_alias">Alias</string>
+    <string name="detail_date">Data i hora</string>
+    <string name="detail_size">Mida tauler</string>
+    <string name="detail_control">Control de temps</string>
+    <string name="detail_result">Resultat</string>
+
     //Toast
     <string name="invalid_cell">Casella incorrecta</string>
     <string name="win">Heu guanyat!!</string>
@@ -56,5 +68,32 @@
     <string name="draw_cells">Heu empatat, Tauler ple.</string>
     <string name="draw_time">Heu empatat, Temps superat.</string>
     <string name="draw">Heu empatat.</string>
+
+    //Preferencies
+    <string name="preferences">Preferències</string>
+    <string name="main">Tornar inici</string>
+    <string name="userTitle">Nom d\'usuari</string>
+    <string name="userSummary">Nom de l\'usuari</string>
+    <string name="user_default">Usuari1</string>
+    <string name="boardTitle">Mida tauler</string>
+    <string name="boardSummary">Mida del tauler del joc</string>
+    <string name="timeTitle">Control de temps</string>
+    <string name="timeSummary">Marcar per a limitar el temps de la partida</string>
+    <string name="selectTimeTitle">Temps de joc</string>
+    <string name="selectTimeSummary">Marca el temps que vols com a limit</string>
+    <string name="multiplayerTitle">Multijugador</string>
+    <string name="multiplayerSummary">Marca si vols jugar en mode multijujador</string>
+    <string name="titleDialog">Introdueix valor</string>
+
+    //Keys
+    <string name="user_key">user</string>
+    <string name="multiplayer_key">multiplayer</string>
+    <string name="board_key">board</string>
+    <string name="board_Default_key">7</string>
+    <string name="time_key">time</string>
+    <string name="selectTime_key">select_time</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/DataBaseTitle"
+            android:textSize="25dp"
+            android:textStyle="bold">
+        </TextView>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <fragment
+        android:id="@+id/ListFrag"
+        class="com.example.connect4game.Fragments.DataBaseListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="100" />
+
+    <fragment
+        android:id="@+id/DetailFrag"
+        class="com.example.connect4game.Fragments.DetailFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="100" />
+
+
+    <Button
+        android:id="@+id/back_databaseActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="?attr/homeAsUpIndicator"
+        android:text="@string/btn_back" />
+</LinearLayout>

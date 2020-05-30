@@ -4,15 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context=".Activities.MainActivity"
     android:background="#B33A70CC">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_weight="2"
@@ -23,70 +33,73 @@
             android:src="@drawable/connect4_main" />
 
         <ImageView
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/connect_4_png_13"></ImageView>
 
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
+        android:layout_marginHorizontal="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_marginRight="10dp">
 
         <Button
+            android:layout_weight="2"
             android:id="@+id/btnHelp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="60dp"
+            android:textSize="30dp"
             android:textStyle="bold"
+            android:layout_gravity="center"
             android:text="@string/btn_help"
-            android:layout_centerHorizontal="true"
-            android:layout_above="@+id/spacer1"
             android:background="#CC292929"
             android:textColor="#FFF"/>
 
-        <Space
-            android:id="@+id/spacer1"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_above="@id/btnInit"></Space>
-
         <Button
+            android:layout_weight="2"
             android:id="@+id/btnInit"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/btn_init"
-            android:textSize="60dp"
+            android:textSize="30dp"
             android:textStyle="bold"
             android:textColor="#FFF"
-            android:layout_centerInParent="true"
             android:background="#CC13BA00"/>
 
-        <Space
-            android:id="@+id/spacer2"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_below="@id/btnInit"></Space>
+        <Button
+            android:layout_weight="2"
+            android:id="@+id/btnDataBase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="@string/btn_database"
+            android:background="#CC001EFF"
+            android:textColor="#FFF"/>
+
 
         <Button
+            android:layout_weight="2"
             android:id="@+id/btnExit"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/btn_exit"
-            android:textSize="60dp"
+            android:textSize="30dp"
             android:textStyle="bold"
             android:textColor="#FFF"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/spacer2"
             android:background="#CCF30000"/>
 
-    </RelativeLayout>
+    </LinearLayout>
 
 
 

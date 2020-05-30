@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="board1">
+        <item>5x5</item>
+        <item>6x6</item>
+        <item>7x7</item>
+    </string-array>
+
+    <string-array name="board2">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+    <string-array name="selectTime1">
+        <item>30s</item>
+        <item>40s</item>
+        <item>50s</item>
+        <item>60s</item>
+        <item>70s</item>
+        <item>80s</item>
+        <item>90s</item>
+        <item>100s</item>
+    </string-array>
+
+    <string-array name="selectTime2">
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+        <item>90</item>
+        <item>100</item>
+    </string-array>
+</resources>
