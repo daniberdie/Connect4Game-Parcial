@@ -36,6 +36,7 @@
     <string name="defeat_result">Derrota</string>
     <string name="draw_result">Empat</string>
     <string name="seconds">seg.</string>
+    <string name="log">Log del joc: </string>
 
 
     //activity_result
@@ -80,9 +81,9 @@
     <string name="timeTitle">Control de temps</string>
     <string name="timeSummary">Marcar per a limitar el temps de la partida</string>
     <string name="selectTimeTitle">Temps de joc</string>
-    <string name="selectTimeSummary">Marca el temps que vols com a limit</string>
+    <string name="selectTimeSummary">Marcar el temps que vols com a limit</string>
     <string name="multiplayerTitle">Multijugador</string>
-    <string name="multiplayerSummary">Marca si vols jugar en mode multijujador</string>
+    <string name="multiplayerSummary">Marcar si vols jugar en mode multijujador</string>
     <string name="titleDialog">Introdueix valor</string>
 
     //Keys

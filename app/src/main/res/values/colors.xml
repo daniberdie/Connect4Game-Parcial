@@ -9,4 +9,5 @@
     <color name="colorWin">#10FF00</color>
     <color name="colorLose">#FF0000</color>
     <color name="colorDraw">#FFEE00</color>
+    <color name="colorLog">#FFB700</color>
 </resources>

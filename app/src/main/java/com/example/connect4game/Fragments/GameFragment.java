@@ -41,7 +41,7 @@ public class GameFragment extends Fragment {
     private String player, result, detail_result;
     public long counter = 40, time_left = 0;
     private boolean multiplayer_mode;
-    private int cells_left;
+    private int cells_left, movement_num = 0;
 
     private TimeCounter timeCounter;
 
@@ -147,11 +147,19 @@ public class GameFragment extends Fragment {
                 setAvailableMovements();
                 //Actualitzar el temps després de cada jugada (Han tirat els dos jugadors).
                 updateTime();
+
             }
         });
 
         //Millora: ús de notifyDataSetChange
         imageAdapter.notifyDataSetChanged();
+    }
+
+    private void updateLog(String text) {
+        LogFragment logFragment = (LogFragment) getFragmentManager().findFragmentById(R.id.fragmentLog);
+        if (logFragment != null && logFragment.isInLayout()){
+            logFragment.showLog(text);
+        }
     }
 
     private void getPreferences() {
@@ -180,6 +188,11 @@ public class GameFragment extends Fragment {
         int row= movedPosition.getRow();
         int position = row * grid_size + col;
         graella[position] = drawable_id;
+        movement_num++;
+
+        //Modificar Log
+        String log_text = turn.getText().toString() +": "+ "(" + "Columna: " + (col+1)+" | "+ "Fila: " + (row+1) + ")" + " Tirada: " + movement_num;
+        updateLog(log_text);
     }
 
     public void updateTime() {

@@ -1,6 +1,7 @@
 package com.example.connect4game.Fragments;
 
 import android.app.Activity;
+import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
 
@@ -30,6 +31,7 @@ public class DataBaseListFragment extends Fragment {
     SQLite sqLite;
     private ListView listView;
     private GameListener gameListener;
+    private DataBaseAdapter dataBaseAdapter;
 
     @Override
     public void onAttach(Activity activity) {
@@ -43,7 +45,8 @@ public class DataBaseListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_data_base_list, container, false);
         sqLite = new SQLite(getActivity());
         listView = (ListView) view.findViewById(R.id.gamesListDatabase);
-        listView.setAdapter(new GameAdapter(DataBaseListFragment.this, sqLite));
+        dataBaseAdapter = new DataBaseAdapter(getActivity(), sqLite);
+        listView.setAdapter(dataBaseAdapter);
         return view;
 
     }
@@ -60,6 +63,8 @@ public class DataBaseListFragment extends Fragment {
                 }
             }
         });
+
+        dataBaseAdapter.notifyDataSetChanged();
     }
 
     public void setGameListener(GameListener listener) {
@@ -70,12 +75,12 @@ public class DataBaseListFragment extends Fragment {
         void onGameSelected(int pos);
     }
 
-    private class GameAdapter extends BaseAdapter {
+    private class DataBaseAdapter extends BaseAdapter {
         Activity context;
         SQLite database;
 
-        GameAdapter(DataBaseListFragment fragmentList, SQLite sqLite) {
-            this.context = fragmentList.getActivity();
+        DataBaseAdapter(Context context, SQLite sqLite) {
+            this.context = (Activity) context;
             this.database = sqLite;
         }
 

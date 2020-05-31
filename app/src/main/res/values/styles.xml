@@ -9,7 +9,7 @@
     </style>
 
     <style name="PreferencesTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:background">#995B80AA</item>
+        <item name="android:background">#985A89FF</item>
         <item name="colorAccent">#FFFFFF</item>
     </style>
 

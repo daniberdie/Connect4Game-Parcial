@@ -212,6 +212,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         //Mostrar opció de menú per tornar a la pantalla de inici
         MenuItem item_main = menu.findItem(R.id.main_option);
         item_main.setVisible(true);
+        toolbar.setTitle("");
 
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
