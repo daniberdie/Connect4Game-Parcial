@@ -26,5 +26,14 @@
         android:id="@+id/DetailFrag"
         class="com.example.connect4game.Fragments.DetailFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_weight="2"/>
+
+    <fragment
+        android:id="@+id/ResultPFrag"
+        class="com.example.connect4game.Fragments.ResultPFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"/>
+
 </LinearLayout>

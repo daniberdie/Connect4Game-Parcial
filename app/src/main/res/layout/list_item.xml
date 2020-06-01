@@ -26,7 +26,6 @@
 
             <TextView
                 android:id="@+id/DBAlias"
-                android:text="DANI"
                 android:paddingLeft="10dp"
                 android:textColor="#0033FF"
                 android:layout_width="wrap_content"
@@ -35,7 +34,6 @@
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/DBResult"
-                android:text="WIN"
                 android:paddingLeft="10dp"
                 android:textColor="@color/colorBlack"
                 android:layout_width="wrap_content"
@@ -51,7 +49,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="12/04/2020"
             android:textStyle="normal" />
 
     </LinearLayout>

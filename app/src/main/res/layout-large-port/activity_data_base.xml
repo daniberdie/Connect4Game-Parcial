@@ -39,6 +39,14 @@
         android:layout_weight="100" />
 
 
+    <fragment
+        android:id="@+id/ResultPFrag"
+        class="com.example.connect4game.Fragments.ResultPFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="100"/>
+
+
     <Button
         android:id="@+id/back_databaseActivity"
         android:layout_width="match_parent"

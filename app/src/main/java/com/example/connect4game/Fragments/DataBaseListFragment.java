@@ -131,7 +131,8 @@ public class DataBaseListFragment extends Fragment {
             alias.setText(cursor.getString(1));
 
             TextView result = (TextView) item.findViewById(R.id.DBResult);
-            result.setText(game_result);
+            //Versió 1 --> Ocultar text resultat
+            //result.setText(game_result);
 
             TextView date = (TextView) item.findViewById(R.id.DBDate);
             date.setText(cursor.getString(2));

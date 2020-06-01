@@ -46,8 +46,9 @@ public class DetailFragment extends Fragment {
                 getString(R.string.detail_date) + ": " + cursor.getString(2) + "\n" +
                 getString(R.string.detail_size) + ": " + cursor.getString(3) + "\n" +
                 getString(R.string.detail_control) + ": " + time_control_activated + "\n" +
-                game_duration + ": " + cursor.getString(5) + " " + getString(R.string.seconds) + "\n" +
-                getString(R.string.detail_result)+ ": " + cursor.getString(7);
+                game_duration + ": " + cursor.getString(5) + " " + getString(R.string.seconds) + "\n";
+                //Versió 1 --> Ocultar text de resultat
+                //getString(R.string.detail_result)+ ": " + cursor.getString(7);
         return textGame;
     }
 }

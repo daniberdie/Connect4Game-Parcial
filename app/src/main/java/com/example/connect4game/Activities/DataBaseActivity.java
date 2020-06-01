@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.example.connect4game.Fragments.DataBaseListFragment;
 import com.example.connect4game.Fragments.DetailFragment;
+import com.example.connect4game.Fragments.ResultPFragment;
 import com.example.connect4game.R;
 
 public class DataBaseActivity extends FragmentActivity implements DataBaseListFragment.GameListener {
@@ -47,6 +48,12 @@ public class DataBaseActivity extends FragmentActivity implements DataBaseListFr
             Intent intent = new Intent(this, DetailActivity.class);
             intent.putExtra("position_select", pos);
             startActivity(intent);
+        }
+
+        //Versio 1 parcial
+        ResultPFragment resultPFragment = (ResultPFragment) getSupportFragmentManager().findFragmentById(R.id.ResultPFrag);
+        if(resultPFragment != null && resultPFragment.isInLayout()){
+            resultPFragment.viewDetails(pos);
         }
     }
 }

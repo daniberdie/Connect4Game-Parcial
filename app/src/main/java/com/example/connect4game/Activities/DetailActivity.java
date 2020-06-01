@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentActivity;
 import android.os.Bundle;
 
 import com.example.connect4game.Fragments.DetailFragment;
+import com.example.connect4game.Fragments.ResultPFragment;
 import com.example.connect4game.R;
 
 public class DetailActivity extends FragmentActivity {
@@ -17,6 +18,14 @@ public class DetailActivity extends FragmentActivity {
 
         DetailFragment detalle = (DetailFragment) getSupportFragmentManager().
                 findFragmentById(R.id.DetailFrag);
-        detalle.viewDetails(getIntent().getIntExtra("position_select", 0));
+        int pos = getIntent().getIntExtra("position_select", 0);
+        detalle.viewDetails(pos);
+
+        //Versió 1
+        ResultPFragment resultPFragment = (ResultPFragment) getSupportFragmentManager().findFragmentById(R.id.ResultPFrag);
+        if(resultPFragment != null && resultPFragment.isInLayout()){
+            resultPFragment.viewDetails(pos);
+        }
+
     }
 }
