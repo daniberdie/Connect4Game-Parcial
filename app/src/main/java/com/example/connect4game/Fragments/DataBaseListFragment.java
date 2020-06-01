@@ -3,6 +3,8 @@ package com.example.connect4game.Fragments;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -23,6 +25,7 @@ import android.widget.TextView;
 import com.example.connect4game.Classes.SQLite;
 import com.example.connect4game.R;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -131,13 +134,43 @@ public class DataBaseListFragment extends Fragment {
             alias.setText(cursor.getString(1));
 
             TextView result = (TextView) item.findViewById(R.id.DBResult);
-            //Versió 1 --> Ocultar text resultat
+            //Versió 1 --> Ocultar text resultat per a que no surtí quan s'executí el exàmen. Per a la pràctica si ha de sortir
             //result.setText(game_result);
 
             TextView date = (TextView) item.findViewById(R.id.DBDate);
             date.setText(cursor.getString(2));
 
+            //Versió 2 exàmen android
+            boolean time_control;
+            if(cursor.getInt(4) == 1) time_control = true;
+            else time_control = false;
+
+            int drawable;
+
+            if(result.equals("Heu guanyat!!")){
+                drawable = R.drawable.victoria;
+            }else if (result.equals("Heu perdut.")){
+                drawable =  R.drawable.derrota;
+            }else if (result.equals("Heu empatat, Temps superat.")){
+                drawable =  R.drawable.tiempoagotado;
+            }else{
+                drawable = R.drawable.empate;
+            }
+
+            byte[] blob = getBlob(drawable) ;
+
+            //sqLite.migrateDataFromFirstTable(cursor.getInt(0),cursor.getString(1),cursor.getString(2),cursor.getInt(3),time_control,cursor.getString(5), blob);
+
             return (item);
         }
+    }
+
+    //Versió 2 exàmen android insertar dades
+    private byte[] getBlob(int drawable) {
+        Bitmap icon = BitmapFactory.decodeResource(getResources(),
+                drawable);
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        icon.compress(Bitmap.CompressFormat.PNG, 0, outputStream);
+        return outputStream.toByteArray();
     }
 }

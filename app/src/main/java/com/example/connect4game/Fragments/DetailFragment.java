@@ -47,7 +47,7 @@ public class DetailFragment extends Fragment {
                 getString(R.string.detail_size) + ": " + cursor.getString(3) + "\n" +
                 getString(R.string.detail_control) + ": " + time_control_activated + "\n" +
                 game_duration + ": " + cursor.getString(5) + " " + getString(R.string.seconds) + "\n";
-                //Versió 1 --> Ocultar text de resultat
+                //Versió 1 --> Ocultar text resultat per a que no surtí quan s'executí el exàmen. Per a la pràctica si ha de sortir
                 //getString(R.string.detail_result)+ ": " + cursor.getString(7);
         return textGame;
     }

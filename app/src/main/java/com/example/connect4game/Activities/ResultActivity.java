@@ -90,6 +90,8 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     private void saveToDataBase() {
         sqlite = new SQLite(this);
         sqlite.addResult(alias, editText_date.getText().toString(), size, withTime, time, result, detail_result);
+        //Versió 2 exàmen android
+        //sqlite.addResultToExamTable(alias, editText_date.getText().toString(), size, withTime, time, result);
     }
 
     private void setImageResult() {
